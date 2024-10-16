@@ -1,0 +1,26 @@
+﻿<Window x:Class="MVVMLib.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMLib.UI"
+        xmlns:views="clr-namespace:MVVMLib.UI.Views"
+        xmlns:viewModels="clr-namespace:MVVMLib.UI.ViewModels"
+        xmlns:designViewModels="clr-namespace:MVVMLib.UI.ViewModels.DesignTimeViewModels"
+        mc:Ignorable="d"
+        Title="ExampleMainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance Type=designViewModels:DesignTimeMainWindowViewModel, IsDesignTimeCreatable=True}">
+    <Grid>
+        <ContentControl Content="{Binding NavigationService.CurrentViewModel }">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewModels:SomeViewModel}">
+                    <views:SomeView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewModels:SomeDumbViewModel}">
+                    <views:SomeDumbView />
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</Window>

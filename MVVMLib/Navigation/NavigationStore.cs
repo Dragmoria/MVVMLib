@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVVMLib
+namespace MVVMLib.Navigation
 {
-    public class BaseViewModel : ObservableObject
+    internal class NavigationStore
     {
     }
 }
